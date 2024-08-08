@@ -40,7 +40,7 @@ public class ExplorerClient extends JFrame {
     private void connectToServer() {
         new Thread(() -> {
             try {
-                Socket socket = new Socket("localhost", 12345);
+                Socket socket = new Socket("localhost", 12345);        // <-------------- PUT IPV4 address here to connect to host instead of localhost
                 out = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
